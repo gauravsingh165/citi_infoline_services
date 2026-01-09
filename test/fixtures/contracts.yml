@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: one
+  start_date: 2026-01-07
+  end_date: 2026-01-07
+  cost: 9.99
+  description: MyText
+
+two:
+  customer: two
+  start_date: 2026-01-07
+  end_date: 2026-01-07
+  cost: 9.99
+  description: MyText

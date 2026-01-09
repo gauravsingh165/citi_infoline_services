@@ -129,11 +129,21 @@ GEM
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
+    ffi (1.17.3)
     fugit (1.12.1)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
     globalid (1.3.0)
       activesupport (>= 6.1)
+    haml (6.4.0)
+      temple (>= 0.8.2)
+      thor
+      tilt
+    haml-rails (3.0.0)
+      actionpack (>= 5.1)
+      activesupport (>= 5.1)
+      haml (>= 4.0.6)
+      railties (>= 5.1)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.3)
@@ -283,6 +293,14 @@ GEM
       railties (>= 7.0)
     rexml (3.4.4)
     rubyzip (2.4.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     securerandom (0.3.2)
     selenium-webdriver (4.26.0)
       base64 (~> 0.2)
@@ -312,7 +330,9 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.2.0)
+    temple (0.10.4)
     thor (1.4.0)
+    tilt (2.0.10)
     timeout (0.6.0)
     tsort (0.2.0)
     turbo-rails (2.0.12)
@@ -350,6 +370,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  haml-rails
   importmap-rails
   jbuilder
   letter_opener
@@ -357,6 +378,8 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.2)
   rails_admin (~> 3.0)
+  sassc
+  sassc-rails
   selenium-webdriver
   sidekiq
   sidekiq-cron

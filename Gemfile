@@ -75,3 +75,6 @@ gem 'rails_admin', '~> 3.0'
 # Background jobs
 gem 'sidekiq'
 gem 'sidekiq-cron'
+gem 'sassc'
+gem "sassc-rails"
+gem "haml-rails"

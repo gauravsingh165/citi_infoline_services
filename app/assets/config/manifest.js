@@ -1,2 +1,9 @@
 //= link_tree ../images
 //= link_directory ../stylesheets .css
+//= link style.css
+//= link responsive.css
+//= font awesome.min.css
+//= bootstrap.min.css
+//= link bootstrap.js
+//= link custom.js
+//= link jquery-3.4.1.min.js

@@ -1,0 +1,94 @@
+<section class="service_section layout_padding" style="background: #919999; color: white;">
+  <div class="container">
+
+    <div class="heading_container heading_center mb-5">
+      <h2>Our Services</h2>
+      <p>Marketing, content, and growth solutions built for modern businesses.</p>
+    </div>
+
+    <div class="row">
+
+      <% services = [
+        { title: "Branding Advertisement", img: "branding.png" },
+        { title: "Content Creation", img: "content_creation.png" },
+        { title: "Content Management", img: "content_management.png" },
+        { title: "Content Strategy", img: "content_strategy.png" },
+        { title: "Video Services", img: "video_services.png" },
+        { title: "Advertisement & Promotion", img: "advertisement_promotion.png" },
+        { title: "Digital Advertisement Service", img: "digital_advertising.png" },
+        { title: "Digital Marketing", img: "digital_marketing.png" },
+        { title: "Social Media Marketing", img: "social_media_marketing.png" },
+        { title: "Email Marketing", img: "email_marketing.png" },
+        { title: "Content Marketing", img: "content_marketing.png" }
+      ] %>
+
+      <% services.each do |service| %>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="service-card">
+
+            <div class="service-img">
+              <%= image_tag service[:img], alt: service[:title] %>
+            </div>
+
+            <h5><%= service[:title] %></h5>
+            <p>
+              Professional <%= service[:title].downcase %> solutions
+              designed to increase reach, engagement, and growth.
+            </p>
+
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+</section>
+
+<style> 
+.service_section {
+  background: #222831;
+  color: #ffffff;
+}
+
+.service-card {
+  background: #816a72;
+  padding: 20px;
+  border-radius: 14px;
+  height: 100%;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.service-img {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-card h5 {
+  color: #ffbe33;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #dddddd;
+  line-height: 1.6;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  background: #343a46;
+}
+
+</style>
