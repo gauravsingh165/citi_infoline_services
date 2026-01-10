@@ -38,12 +38,20 @@
   <body>
   
     <%= render 'layouts/navbar' %>
-    <% if notice.present? %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+    <div id="toast-container">
+      <% if notice.present? %>
+        <div class="toast toast-success" data-timeout="4000">
+          <span class="toast-message"><%= notice %></span>
+        </div>
+      <% end %>
+
+      <% if alert.present? %>
+        <div class="toast toast-error" data-timeout="5000">
+          <span class="toast-message"><%= alert %></span>
+        </div>
+      <% end %>
+    </div>
+
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= javascript_include_tag 'jquery-3.4.1.min' %>
@@ -62,7 +70,67 @@
       <!-- custom js -->
       <%= javascript_include_tag 'custom' %>
       <!-- Google Map -->
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".toast").forEach(toast => {
+            const timeout = toast.dataset.timeout || 4000;
+
+            setTimeout(() => {
+              toast.style.animation = "toast-out 0.3s ease forwards";
+              setTimeout(() => toast.remove(), 300);
+            }, timeout);
+          });
+        });
+      </script>
+
+      <style>
+          #toast-container {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+          }
+
+          .toast {
+            min-width: 280px;
+            max-width: 380px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            transform: translateX(20px);
+            animation: toast-in 0.35s ease forwards;
+          }
+
+          .toast-success {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+          }
+
+          .toast-error {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+          }
+
+          @keyframes toast-in {
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes toast-out {
+            to {
+              opacity: 0;
+              transform: translateX(20px);
+            }
+          }
+
+      </style>
   </body>
 </html>
