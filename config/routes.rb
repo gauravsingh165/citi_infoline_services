@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :admins, skip: [:registrations]
+  devise_for :admins
 
   get 'home/index', to: 'home#index'
   get 'home/about', to: 'home#about'
