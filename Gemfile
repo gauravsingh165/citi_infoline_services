@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.0.0"
+ruby "3.2.9"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.2"
@@ -13,7 +13,7 @@ gem "sprockets-rails"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
-gem 'pg'
+# gem 'pg'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -78,3 +78,4 @@ gem 'sidekiq-cron'
 gem 'sassc'
 gem "sassc-rails"
 gem "haml-rails"
+gem 'sqlite3', '~> 1.4'

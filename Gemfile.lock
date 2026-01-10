@@ -129,7 +129,12 @@ GEM
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
-    ffi (1.17.3)
+    ffi (1.17.3-aarch64-linux-gnu)
+    ffi (1.17.3-arm-linux-gnu)
+    ffi (1.17.3-arm64-darwin)
+    ffi (1.17.3-x86-linux-gnu)
+    ffi (1.17.3-x86_64-darwin)
+    ffi (1.17.3-x86_64-linux-gnu)
     fugit (1.12.1)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
@@ -216,11 +221,6 @@ GEM
     nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.6.3)
-    pg (1.6.3-aarch64-linux)
-    pg (1.6.3-arm64-darwin)
-    pg (1.6.3-x86_64-darwin)
-    pg (1.6.3-x86_64-linux)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -327,6 +327,12 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
+    sqlite3 (1.7.3-aarch64-linux)
+    sqlite3 (1.7.3-arm-linux)
+    sqlite3 (1.7.3-arm64-darwin)
+    sqlite3 (1.7.3-x86-linux)
+    sqlite3 (1.7.3-x86_64-darwin)
+    sqlite3 (1.7.3-x86_64-linux)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.2.0)
@@ -374,7 +380,6 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   letter_opener
-  pg
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.2)
   rails_admin (~> 3.0)
@@ -384,13 +389,14 @@ DEPENDENCIES
   sidekiq
   sidekiq-cron
   sprockets-rails
+  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
   web-console
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.2.9p265
 
 BUNDLED WITH
    2.5.23
