@@ -1,79 +1,155 @@
-  <footer class="footer_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 footer-col">
-          <div class="footer_contact">
-            <h4>
-              Contact Us
-            </h4>
-            <div class="contact_link_box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +01 1234567890
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>
-                  demo@gmail.com
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 footer-col">
-          <div class="footer_detail">
-            <a href="" class="footer-logo">
-              CitiInfolineServices
-            </a>
-            <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
-            </p>
-            <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 footer-col">
-          <h4>
-            Opening Hours
-          </h4>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<footer class="footer_section">
+  <div class="container">
+    <div class="row">
+
+      <!-- ABOUT COMPANY -->
+      <div class="col-md-4 footer-col">
+        <div class="footer_about">
+          <h4>Citi Infoline Services</h4>
           <p>
-            Everyday
+            We are a Mumbai-based digital marketing and branding agency delivering
+            result-driven solutions across India. From strategy to execution,
+            we help businesses grow with clarity and confidence.
           </p>
-          <p>
-            10.00 Am -10.00 Pm
-          </p>
+
+          <div class="footer_social">
+            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          </div>
         </div>
       </div>
-      <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">CitiInfolineServices</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+
+      <!-- CONTACT INFO -->
+      <div class="col-md-4 footer-col">
+        <h4>Contact Us</h4>
+
+        <div class="contact_link_box">
+          <a href="https://www.google.com/maps/search/?api=1&query=19.171484,73.001678" target="_blank">
+            <i class="fa fa-map-marker"></i>
+            <span>
+              301 Sai Darshan Plaza, Digha MIDC, Navi Mumbai, Maharashtra 400708
+            </span>
+          </a>
+
+          <a href="tel:+917208374919">
+            <i class="fa fa-phone"></i>
+            <span>+91 72083 74919</span>
+          </a>
+
+          <a href="mailto:Citiinfolineservices@gmail.com">
+            <i class="fa fa-envelope"></i>
+            <span>Citiinfolineservices@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- SERVICES & HOURS -->
+      <div class="col-md-4 footer-col">
+        <h4>Our Services</h4>
+        <ul class="footer_services">
+          <li>Branding & Advertising</li>
+          <li>Digital Marketing</li>
+          <li>Social Media Marketing</li>
+          <li>Content Creation</li>
+          <li>SEO & Paid Ads</li>
+        </ul>
+
+        <p class="working-hours">
+          <strong>Working Hours:</strong><br>
+          Monday – Saturday<br>
+          10:00 AM – 7:00 PM
         </p>
       </div>
+
     </div>
-  </footer>
+
+    <div class="footer-info">
+      <p>
+        © <span id="displayYear"></span> Citi Infoline Services.
+        All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+<style>
+.footer_section {
+  background: #0b1c39;
+  color: #cbd5e1;
+  padding: 70px 0 30px;
+  font-size: 14px;
+}
+
+.footer_section h4 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.footer_about p {
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.footer_social a {
+  display: inline-block;
+  margin-right: 12px;
+  color: #cbd5e1;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer_social a:hover {
+  color: #38bdf8;
+}
+
+.contact_link_box a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.contact_link_box i {
+  color: #38bdf8;
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.contact_link_box a:hover {
+  color: #ffffff;
+}
+
+.footer_services {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.footer_services li {
+  margin-bottom: 8px;
+}
+
+.working-hours {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.footer-info {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+</style>

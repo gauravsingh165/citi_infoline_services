@@ -1,0 +1,196 @@
+<section class="appointment-section">
+  <div class="appointment-overlay"></div>
+
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+
+      <div class="col-md-7 col-lg-6">
+        <div class="appointment-card">
+
+          <div class="company-badge">
+            City Infoline Services • Mumbai • Serving All India
+          </div>
+
+          <h2>Book an Appointment</h2>
+          <p class="subtitle">
+            Let’s discuss your business goals and create a marketing strategy
+            that delivers measurable growth.
+          </p>
+
+          <div class="company-stats">
+            <div>
+              <strong>10+ Years</strong>
+              <span>Experience</span>
+            </div>
+            <div>
+              <strong>10K+</strong>
+              <span>Clients</span>
+            </div>
+            <div>
+              <strong>Pan-India</strong>
+              <span>Reach</span>
+            </div>
+          </div>
+
+          <%= form_with model: @customer, local: true do |f| %>
+
+            <div class="form-group">
+              <%= f.label :name, "Your Name" %>
+              <%= f.text_field :name, class: "form-control", placeholder: "Enter your full name" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :phone, "Phone Number" %>
+              <%= f.text_field :phone, class: "form-control", placeholder: "Enter your phone number" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :email, "Email Address" %>
+              <%= f.email_field :email, class: "form-control", placeholder: "Enter your email address" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit "Book Appointment", class: "btn-submit" %>
+            </div>
+
+          <% end %>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style> 
+.appointment-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 90px 0;
+  background: url('/assets/appointment.jpg') center/cover no-repeat;
+}
+
+.appointment-overlay {
+  position: absolute;
+  inset: 0;
+    background: linear-gradient(135deg, rgb(177 112 161 / 85%), rgb(24 161 54 / 75%));
+}
+
+.appointment-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.appointment-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 26px;
+  padding: 42px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.25);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideFade 0.9s ease forwards;
+}
+
+.company-badge {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1e40af;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.appointment-card h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #0b1c39;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 26px;
+}
+
+.company-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.company-stats div {
+  flex: 1;
+}
+
+.company-stats strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.company-stats span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-control {
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  padding: 0 16px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+}
+
+.btn-submit {
+  width: 100%;
+  height: 54px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 55px rgba(37, 99, 235, 0.45);
+}
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>

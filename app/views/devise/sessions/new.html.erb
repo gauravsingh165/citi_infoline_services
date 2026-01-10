@@ -1,26 +1,167 @@
-<h2>Log in</h2>
+<section class="auth-section">
+  <div class="auth-overlay" style="background: gainsboro;"></div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6 col-lg-5">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+        <div class="auth-card">
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+          <h2>Log In</h2>
+          <p class="subtitle">
+            Access your account to manage appointments
+          </p>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <div class="form-group">
+              <%= f.label :email, "Email Address" %>
+              <%= f.email_field :email,
+                    autofocus: true,
+                    autocomplete: "email",
+                    class: "form-control",
+                    placeholder: "Enter your email" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password, "Password" %>
+              <%= f.password_field :password,
+                    autocomplete: "current-password",
+                    class: "form-control",
+                    placeholder: "Enter your password" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="remember-row">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, "Remember me" %>
+              </div>
+            <% end %>
+
+            <div class="form-group">
+              <%= f.submit "Log In", class: "btn-auth" %>
+            </div>
+
+          <% end %>
+
+          <div class="auth-links">
+            <%= render "devise/shared/links" %>
+          </div>
+
+        </div>
+
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</section>
 
-<%= render "devise/shared/links" %>
+<style>
+.remember-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #334155;
+}
+.auth-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.auth-card {
+  position: relative;
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.auth-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.auth-card .subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+.auth-card label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.auth-card .form-control {
+  height: 46px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 14px;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+}
+
+.auth-card .form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.remember-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #475569;
+  margin: 18px 0 26px;
+}
+
+
+.btn-auth {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-auth:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.45);
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.auth-links a {
+  font-size: 13px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+</style>

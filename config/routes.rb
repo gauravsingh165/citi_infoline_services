@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'home/index', to: 'home#index'
   get 'home/about', to: 'home#about'
   get 'home/services', to: 'home#services'
-  resources :customers, only: [:create]
+  resources :customers, only: [:create, :new]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

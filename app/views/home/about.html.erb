@@ -1,39 +1,225 @@
-<section class="about_section layout_padding" style="background: white; color: black;">
+<section class="about_section about-modern">
   <div class="container">
+    <div class="row align-items-center">
 
-    <div class="row">
+      <!-- LEFT IMAGE -->
       <div class="col-md-6">
-        <div class="img-box">
+        <div class="about-image">
           <%= image_tag 'about-1.jpg', alt: 'Branding and Digital Marketing Agency' %>
         </div>
       </div>
 
+      <!-- RIGHT CONTENT -->
       <div class="col-md-6">
-        <div class="detail-box">
-          <div class="heading_container">
-            <h2>
-              We Help Brands Grow Through Smart Marketing
-            </h2>
-          </div>
+        <div class="about-content">
+          <h2>We Help Brands Grow Through Smart Marketing</h2>
 
           <p>
-            We are a results-driven branding and digital marketing agency focused on
-            helping businesses build strong brand identities, create impactful content,
-            and run effective promotional campaigns.
+            We are a results-driven branding and digital marketing agency helping
+            businesses build strong identities, powerful content, and high-performing
+            campaigns across digital platforms.
           </p>
 
           <p>
             From branding and content creation to digital advertising, social media,
-            email marketing, and video services, we provide end-to-end marketing
-            solutions that drive visibility, engagement, and real business growth.
+            email marketing, and video services — we deliver measurable growth,
+            not empty promises.
           </p>
 
-          <a href="#contact">
-            Book Appointment
-          </a>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3 class="counter" data-target="10000">0</h3>
+              <span>Happy Clients</span>
+            </div>
+            <div class="stat-card">
+              <h3 class="counter" data-target="10000">0</h3>
+              <span>Projects Delivered</span>
+            </div>
+            <div class="stat-card">
+              <h3 class="counter" data-target="10">0</h3>
+              <span>Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <h3><span class="counter" data-target="130">0</span>%</h3>
+              <span>Avg Growth</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
+
+<section class="why_work_section why-modern">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- CONTENT -->
+      <div class="col-md-6">
+        <h2>Why We Should Work Together</h2>
+
+        <div class="why-cards">
+          <div class="why-card">
+            <h4>Personalized Strategies</h4>
+            <p>Every campaign is customized to your goals, audience, and industry.</p>
+          </div>
+
+          <div class="why-card">
+            <h4>Data-Driven Decisions</h4>
+            <p>We use real-time analytics to optimize performance and ROI.</p>
+          </div>
+
+          <div class="why-card">
+            <h4>Full-Stack Marketing</h4>
+            <p>SEO, ads, social, content, branding, and web — all in one place.</p>
+          </div>
+
+          <div class="why-card">
+            <h4>Pan-India Reach</h4>
+            <p>Mumbai-based team delivering scalable solutions across India.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="col-md-6">
+        <div class="why-image">
+          <%= image_tag 'team.jpg', alt: 'Digital Marketing Team India' %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+
+.about-modern {
+  background: linear-gradient(135deg, #eef4ff, #f8fbff);
+  padding: 90px 0;
+}
+
+.about-image img,
+.why-image img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+}
+
+.about-content h2,
+.why-modern h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0b1c39;
+}
+
+.about-content p {
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+}
+
+.stat-card h3 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.stat-card span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.why-modern {
+  background: #ffffff;
+  padding: 90px 0;
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.why-card {
+  padding: 25px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f9fbff, #eef4ff);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  transition: all 0.35s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+}
+
+.why-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 6px;
+}
+
+.why-card p {
+  font-size: 14px;
+  color: #475569;
+}
+
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+
+    const animateCounter = (el) => {
+      const target = +el.dataset.target;
+      let count = 0;
+      const speed = target / 120;
+
+      const update = () => {
+        count += speed;
+        if (count < target) {
+          el.innerText = Math.ceil(count);
+          requestAnimationFrame(update);
+        } else {
+          el.innerText = target;
+        }
+      };
+      update();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => observer.observe(c));
+  });
+</script>

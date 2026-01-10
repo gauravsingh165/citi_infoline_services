@@ -1,29 +1,172 @@
-<h2>Sign up</h2>
+<section class="auth-section">
+  <div class="auth-overlay"></div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6 col-lg-5">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <div class="auth-card">
+
+          <h2>Create Account</h2>
+          <p class="subtitle">Sign up to access your dashboard</p>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="form-group">
+              <%= f.label :email, "Email Address" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                    class: "form-control", placeholder: "Enter your email" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password, "Password" %>
+              <% if @minimum_password_length %>
+                <small>(Minimum <%= @minimum_password_length %> characters)</small>
+              <% end %>
+              <%= f.password_field :password, autocomplete: "new-password",
+                    class: "form-control", placeholder: "Create a password" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password_confirmation, "Confirm Password" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",
+                    class: "form-control", placeholder: "Confirm your password" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit "Sign Up", class: "btn-auth" %>
+            </div>
+
+          <% end %>
+
+          <div class="auth-links">
+            <%= render "devise/shared/links" %>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
   </div>
+</section>
+<style>
+.auth-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  background: url('/assets/appointment-bg.jpg') center/cover no-repeat;
+}
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 25, 65, 0.85),
+    rgba(37, 99, 235, 0.75)
+  );
+}
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+.auth-section .container {
+  position: relative;
+  z-index: 2;
+}
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+.auth-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 26px;
+  padding: 40px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.25);
+  animation: slideFade 0.9s ease forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
 
-<%= render "devise/shared/links" %>
+.auth-card h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #0b1c39;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-group small {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  padding: 0 16px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+}
+
+.btn-auth {
+  width: 100%;
+  height: 54px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.btn-auth:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 55px rgba(37, 99, 235, 0.45);
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.auth-links a {
+  color: #2563eb;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>  
