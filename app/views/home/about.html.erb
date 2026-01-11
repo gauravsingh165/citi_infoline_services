@@ -50,12 +50,66 @@
     </div>
   </div>
 </section>
+<section class="campaign_section campaign-modern">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- CONTENT -->
+      <div class="col-md-6">
+        <div class="campaign-content">
+          <h2>Advertising That Builds Brands, Not Just Impressions</h2>
+
+          <p>
+            Advertising has always been the engine behind brand growth — but running ads alone
+            doesn’t move the needle. What matters is how well a campaign speaks to the right
+            audience, at the right time, with the right message.
+          </p>
+
+          <p>
+            <strong>Citi Infoline Services</strong> is a performance-focused B2B and B2C zone
+            advertising company helping brands turn visibility into demand.
+            We design data-backed campaigns that don’t just get seen —
+            they drive engagement, recall, and action.
+          </p>
+
+          <p>
+            Whether you’re an established enterprise or a fast-growing startup,
+            we help you cut through noise, activate your audience,
+            and build long-term brand equity through strategic advertising.
+          </p>
+
+          <ul class="campaign-points">
+            <li>Targeted zone & audience-based advertising</li>
+            <li>Data-driven media planning & execution</li>
+            <li>Brand awareness + demand generation</li>
+            <li>B2B & B2C campaign expertise</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="col-md-6">
+        <div class="campaign-image">
+          <%= image_tag 'campaign.jpg', alt: 'Strategic Advertising Campaigns' %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section class="why_work_section why-modern">
   <div class="container">
     <div class="row align-items-center">
 
-      <!-- CONTENT -->
+      <!-- IMAGE (LEFT NOW) -->
+      <div class="col-md-6">
+        <div class="why-image">
+          <%= image_tag 'team.jpg', alt: 'Digital Marketing Team India' %>
+        </div>
+      </div>
+
+      <!-- CONTENT (RIGHT NOW) -->
       <div class="col-md-6">
         <h2>Why We Should Work Together</h2>
 
@@ -82,19 +136,58 @@
         </div>
       </div>
 
-      <!-- IMAGE -->
-      <div class="col-md-6">
-        <div class="why-image">
-          <%= image_tag 'team.jpg', alt: 'Digital Marketing Team India' %>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 
+
 <style>
+.campaign-modern {
+  background: linear-gradient(135deg, #ffffff, #f4f7ff);
+  padding: 90px 0;
+}
+
+.campaign-content h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #0b1c39;
+  margin-bottom: 18px;
+}
+
+.campaign-content p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.campaign-points {
+  margin-top: 20px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.campaign-points li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #334155;
+}
+
+.campaign-points li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.campaign-image img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+}
 
 .about-modern {
   background: linear-gradient(135deg, #eef4ff, #f8fbff);

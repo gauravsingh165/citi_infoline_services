@@ -32,25 +32,41 @@
             </div>
           </div>
 
-          <%= form_with model: @customer, local: true do |f| %>
+          <%= form_with model: @customer,
+                        local: true,
+                        html: { id: "appointmentForm", novalidate: true } do |f| %>
 
             <div class="form-group">
               <%= f.label :name, "Your Name" %>
-              <%= f.text_field :name, class: "form-control", placeholder: "Enter your full name" %>
+              <%= f.text_field :name,
+                    class: "form-control",
+                    placeholder: "Enter your full name",
+                    required: true %>
+              <small class="error-text"></small>
             </div>
 
             <div class="form-group">
               <%= f.label :phone, "Phone Number" %>
-              <%= f.text_field :phone, class: "form-control", placeholder: "Enter your phone number" %>
+              <%= f.text_field :phone,
+                    class: "form-control",
+                    placeholder: "Enter your phone number",
+                    required: true %>
+              <small class="error-text"></small>
             </div>
 
             <div class="form-group">
               <%= f.label :email, "Email Address" %>
-              <%= f.email_field :email, class: "form-control", placeholder: "Enter your email address" %>
+              <%= f.email_field :email,
+                    class: "form-control",
+                    placeholder: "Enter your email address",
+                    required: true %>
+              <small class="error-text"></small>
             </div>
 
             <div class="form-group">
-              <%= f.submit "Book Appointment", class: "btn-submit" %>
+              <%= f.submit "Book Appointment",
+                    class: "btn-submit",
+                    id: "submitBtn" %>
             </div>
 
           <% end %>
@@ -62,7 +78,7 @@
   </div>
 </section>
 
-<style> 
+<style>
 .appointment-section {
   min-height: 100vh;
   position: relative;
@@ -75,7 +91,7 @@
 .appointment-overlay {
   position: absolute;
   inset: 0;
-    background: linear-gradient(135deg, rgb(177 112 161 / 85%), rgb(24 161 54 / 75%));
+  background: linear-gradient(135deg, rgb(177 112 161 / 85%), rgb(24 161 54 / 75%));
 }
 
 .appointment-section .container {
@@ -126,10 +142,6 @@
   text-align: center;
 }
 
-.company-stats div {
-  flex: 1;
-}
-
 .company-stats strong {
   display: block;
   font-size: 18px;
@@ -168,6 +180,18 @@
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
 }
 
+.form-control.invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.18);
+}
+
+.error-text {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #dc2626;
+}
+
 .btn-submit {
   width: 100%;
   height: 54px;
@@ -192,5 +216,48 @@
     transform: translateY(0);
   }
 }
-
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("appointmentForm");
+  const submitBtn = document.getElementById("submitBtn");
+
+  const validators = {
+    name: value => value.trim().length >= 3,
+    phone: value => /^[6-9]\d{9}$/.test(value),
+    email: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+  };
+
+  const messages = {
+    name: "Name must be at least 3 characters",
+    phone: "Enter a valid 10-digit Indian phone number",
+    email: "Enter a valid email address"
+  };
+
+  form.addEventListener("submit", e => {
+    let valid = true;
+
+    Object.keys(validators).forEach(field => {
+      const input = form.querySelector(`[name="customer[${field}]"]`);
+      const error = input.nextElementSibling;
+
+      if (!validators[field](input.value)) {
+        input.classList.add("invalid");
+        error.textContent = messages[field];
+        valid = false;
+      } else {
+        input.classList.remove("invalid");
+        error.textContent = "";
+      }
+    });
+
+    if (!valid) {
+      e.preventDefault();
+    } else {
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Submitting...";
+    }
+  });
+});
+</script>

@@ -79,23 +79,23 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
-  config.i18n.fallbacks = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"],
-    authentication: "plain",
-    enable_starttls_auto: true
-  }
+    config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      user_name: "gaurav165ongraph@gmail.com",
+      password: "cokz chmy wwbs rvhp",
+      authentication: "plain",
+      enable_starttls_auto: true
+    }
 
-  config.action_mailer.default_url_options = {
-    host: "yourdomain.com"
-  }
-
+    config.action_mailer.default_url_options = {
+      host: "www.citiinfoline.com",
+      protocol: "https"
+    }
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
