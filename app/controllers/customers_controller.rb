@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
-      AppointmentMailer.new_appointment(@customer).deliver_later
+      AppointmentMailer.new_appointment(@customer).deliver_now
       redirect_to root_path, notice: "Appointment booked successfully"
     else
       render :new, status: :unprocessable_entity
