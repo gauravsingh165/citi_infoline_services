@@ -93,7 +93,7 @@ Rails.application.configure do
     }
 
     config.action_mailer.default_url_options = {
-      host: "www.citiinfoline.com",
+      host: "citi-infoline-services.onrender.com",
       protocol: "https"
     }
   # Don't log any deprecations.
