@@ -4,16 +4,22 @@ class CustomersController < ApplicationController
     @customer = Customer.new
   end
 
-  def create
-    @customer = Customer.new(customer_params)
+def create
+  @customer = Customer.new(customer_params)
 
-    if @customer.save
+  if @customer.save
+    begin
       AppointmentMailer.new_appointment(@customer).deliver_now
-      redirect_to root_path, notice: "Appointment booked successfully"
-    else
-      render :new, status: :unprocessable_entity
+    rescue => e
+      Rails.logger.error "Mail failed: #{e.class} - #{e.message}"
     end
+
+    redirect_to root_path, notice: "Appointment booked successfully"
+  else
+    render :new, status: :unprocessable_entity
   end
+end
+
 
 
   private
