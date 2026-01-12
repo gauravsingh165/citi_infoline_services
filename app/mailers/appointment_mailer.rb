@@ -1,6 +1,6 @@
 class AppointmentMailer < ApplicationMailer
-  default to: "gaurav165ongraph@gmail.com",
-          from: "Citi Infoline Services <gaurav165ongraph@gmail.com>"
+  default from: "Citi Infoline Services <gaurav165ongraph@gmail.com>",
+          to: "gaurav165ongraph@gmail.com"
 
   def new_appointment(customer)
     @customer = customer
