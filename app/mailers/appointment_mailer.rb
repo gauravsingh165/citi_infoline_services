@@ -4,7 +4,6 @@ class AppointmentMailer < ApplicationMailer
 
   def new_appointment(customer)
     @customer = customer
-
     mail(
       subject: "New Appointment Booking - #{@customer.name}",
       reply_to: @customer.email

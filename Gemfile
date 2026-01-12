@@ -79,3 +79,4 @@ gem 'sassc'
 gem "sassc-rails"
 gem "haml-rails"
 gem 'sqlite3', '~> 1.4'
+gem "sendgrid-actionmailer"

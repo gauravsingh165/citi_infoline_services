@@ -79,27 +79,19 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
- config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
+config.action_mailer.delivery_method = :sendgrid_actionmailer
 
-  config.action_mailer.default_url_options = {
-    host: "citi-infoline-services.onrender.com",
-    protocol: "https"
-  }
+config.action_mailer.sendgrid_actionmailer_settings = {
+  api_key: ENV["SENDGRID_API_KEY"],
+  raise_delivery_errors: true
+}
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "onrender.com",
-    user_name: "gaurav165ongraph@gmail.com",
-    password: "cokzchmywwbsrvhp",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    open_timeout: 10,
-    read_timeout: 10
-  }
+config.action_mailer.default_url_options = {
+  host: "citi-infoline-services.onrender.com",
+  protocol: "https"
+}
 
+config.active_job.queue_adapter = :async
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false

@@ -9,7 +9,7 @@ def create
 
   if @customer.save
     begin
-      AppointmentMailer.new_appointment(@customer).deliver_now
+     AppointmentMailer.new_appointment(@customer).deliver_later
     rescue => e
       Rails.logger.error "Mail failed: #{e.class} - #{e.message}"
     end
