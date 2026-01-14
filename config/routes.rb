@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :admins
+  get "/health", to: proc { [200, { "Content-Type" => "text/plain" }, ["OK"]] }
+
 
   get 'home/index', to: 'home#index'
   get 'home/about', to: 'home#about'
